@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>CREATE ACCOUNT
+        <div style="display: grid;width: 100px;align-items: center;justify-content: center;gap: 20px;position: relative;top: 20px;left: 100px;">
+            <input id="first" placeholder="first name" type="text">
+            <input id="second" placeholder="last name" type="text">
+
+            <input id="inp1" placeholder="enter a email id" type="text">
+            <input id="pswd" placeholder="create a password" type="text">
+            <button id="button">create account</button>
+            <a href="form.html">signin</a>
+        </div>
+    </fieldset>
+    
+    <script>
+        var button=document.getElementById("button")
+        button.addEventListener("click",()=>{
+            var input=document.getElementById("inp1").value
+            var password=document.getElementById("pswd").value
+            var first=document.getElementById("first").value
+            var last=document.getElementById("second").value
+            if (input.length==0 && password.length==0 && first.length==0 && last.length==0) {
+                alert("please fill all the fields")
+            }
+            else{
+            localStorage.setItem("email",input)
+            localStorage.setItem("password",password)
+            localStorage.setItem("first name",first)
+            localStorage.setItem("last name",last)
+            console.log(localStorage)
+            }
+
+        })
+    </script>
+</body>
+</html>
